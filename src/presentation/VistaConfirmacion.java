@@ -38,7 +38,7 @@ public class VistaConfirmacion {
 		
 		btnConfirmar = new Button("Si");
 		btnConfirmar.setOnMouseClicked((MouseEvent e)->{
-				System.out.println("Aplasta SI");
+				//System.out.println("Aplasta SI");
 				pintarSi();
 				changeColor();
 				regresarPantalla();
@@ -47,7 +47,7 @@ public class VistaConfirmacion {
 		
 		btnDenegar = new Button("No");
 		btnDenegar.setOnMouseClicked((MouseEvent e)->{
-				System.out.println("APLASTA NO");
+				//System.out.println("APLASTA NO");
 				pintarNo();
 				changeColor();
 				regresarPantalla();				
@@ -86,6 +86,7 @@ public class VistaConfirmacion {
 	
 	public void regresarPantalla() {
 		VistaObserver vO=  new VistaObserver();
+		//VistaObserver vO = Observer.getPane();
 		Observer.getPane().getRoot().getChildren().clear();
 		Observer.getPane().getRoot().getChildren().add(vO.getRoot());
 	}

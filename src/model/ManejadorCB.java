@@ -14,21 +14,31 @@ public class ManejadorCB implements EventHandler<ActionEvent>{
 	private ComboBox<String> comboBox;
 	private Label label;
 	
-	public ManejadorCB(ComboBox<String> comboBox) {
+	public ManejadorCB(ComboBox<String> comboBox, Label label) {
 		super();
 		this.comboBox=comboBox;
+		this.label =  label;
 	}
 
 	@Override
 	public void handle(ActionEvent ae) {
-		if(comboBox.getItems().equals("saluda")) {
-			label.setText("Hola");
+		System.out.println(comboBox.getValue());
+		if(comboBox.getValue().equals("saluda")) {
+			cambiarComboBoxSaluda();
 		}
-		if (comboBox.getItems().equals("despide")) {
-			label.setText("Adios");
+		if (comboBox.getValue().equals("despide")) {
+			cambiarComboBoxDespide();
 		}
 		
-
-}
+	}
+	
+	public void cambiarComboBoxSaluda() {
+		label.setText("Saludos cordiales estimado usuario");
+	
+	}
+	public void cambiarComboBoxDespide() {
+		label.setText("Hasta luego, esperamos volver a verlo pronto");
+	
+	}
 	
 }
