@@ -3,9 +3,7 @@ package presentation;
 import javafx.application.*;
 import javafx.stage.Stage;
 import javafx.scene.*;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
+
 
 public class Observer extends Application{
 	public static Scene escena;

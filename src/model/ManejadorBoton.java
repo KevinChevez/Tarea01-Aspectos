@@ -8,6 +8,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import presentation.Observer;
+import presentation.VistaConfirmacion;
 
 public class ManejadorBoton implements EventHandler<ActionEvent>{
 	private Button boton;
@@ -22,32 +23,11 @@ public class ManejadorBoton implements EventHandler<ActionEvent>{
 	
 	@Override
 	public void handle(ActionEvent ae) {
-		if(name == "CYAN") {
-			cambiarColorCyan();
-			boton.setText("CYAN Activated");
-		}
-		if(name == "LIGHTGREEN") {
-			cambiarColorLightGreen();
-			boton.setText("LIGHTGREEN Activated");
-		}
-		if(name == "YELLOW") {
-			cambiarColorYellow();
-			boton.setText("YELLOW Activated");
-		}
-		
+		VistaConfirmacion view = new VistaConfirmacion(name);
+    	view.cambiarPantalla();
 	}
 	
 	
-	public void cambiarColorCyan() {
-		Observer.getPane().getRoot().setBackground(new Background(new BackgroundFill(Color.CYAN,new CornerRadii(1),null)));
-	}
 	
-	public void cambiarColorLightGreen() {
-		Observer.getPane().getRoot().setBackground(new Background(new BackgroundFill(Color.LIGHTGREEN,new CornerRadii(1),null)));
-	}
-	
-	public void cambiarColorYellow() {
-		Observer.getPane().getRoot().setBackground(new Background(new BackgroundFill(Color.YELLOW,new CornerRadii(1),null)));
-	}
 	
 }
